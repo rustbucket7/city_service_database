@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Philosopher&display=swap');
+
+*{
+    font-family: 'Philosopher', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#addDistDiv{
+    width: 100vw;
+    height: 46.4vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#addDistSvg{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#addCityHeader{
+    margin: auto;
+    margin-top: 13vh;
+}
+
+#addDistForm{
+    margin: auto;
+    margin-top: 10vh;
+    height: 10vh;
+    width: 60vw;
+}
+
+.addInput{
+    height: 40%;
+    width: 18%;
+    border: 0;
+    text-decoration: none;
+    font-size: x-large;
+    transition: 0.3s;
+
+}
+
+#addDistForm input:focus{
+    background-color: lightblue;
+    outline: none;
+    height: 50%;
+    border: solid #5e5e5e 3px;
+}
+
+#addDistForm select:focus{
+    background-color: lightblue;
+}
+
+#addDistForm select{
+    margin-top: 2%;
+    height: 40%;
+    width: 18%;
+    border: 0;
+    text-decoration: none;
+    color: #686868;
+    font-size: x-large;
+    transition: 0.3s;
+}
+
+#schoolAdd{
+    width: 3%;
+    cursor: pointer;
+}
+
+#socialAdd{
+    width: 3%;
+    cursor: pointer;
+}
+
+#addDistSubmit{
+    width: 20%;
+    height: 4vh;
+    background-color: #5e5e5e;
+    color: white;
+    font-size: x-large;
+    cursor: pointer;
+}

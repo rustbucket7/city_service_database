@@ -1,0 +1,428 @@
+@import url('https://fonts.googleapis.com/css2?family=Rowdies&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Rowdies', cursive;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+#pageContainer{
+    height: 40vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+#districtIcon{
+    border-radius: 50%;
+}
+
+#cityContainer{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: #93C3EA;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    z-index: -1;
+}
+
+#citySvg{
+    width: 100%;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+#meadowContainer{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: -1;
+}
+
+#meadowSvg{
+    width: 100%;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+#loadingSpinner{
+    width: 100vw;
+    height: 90vh;
+    position: absolute;
+    top: 10vh;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: 0.5s;
+    z-index: -1;
+    opacity: 0;
+}
+
+#loadingSpinnerA{
+    position: absolute;
+    top: calc(50% - 4vh);
+    left: calc(50% - 4vh);
+    height: 8vh;
+    width: 8vh;
+    border-radius: 50%;
+    border: solid gray 6px;
+    border-left: solid lightgray 6px;
+    transition: 0.3s;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-name: spin;
+    animation-timing-function: linear;
+}
+
+@keyframes spin {
+    0%{transform: rotateZ(0deg);}
+    100%{transform: rotateZ(360deg);}
+}
+
+a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10vw;
+    height: 8vh;
+    border: solid white 1vh;
+    background-color: slategray;
+    font-size: x-large;
+    z-index: 150;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+
+
+#formsContainer{
+    position: absolute;
+    top: 15vh;
+    left: 0;
+    height: 25vh;
+    width: 100vw;
+    background-color: rgba(119, 136, 153, 0.582);
+    color: white;
+    z-index: 100;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+form input{
+    margin: 0.5vh;
+    height: 3vh;
+}
+
+form select{
+    margin: 0.5vh;
+    height: 3vh;
+}
+form select:hover{
+    cursor: pointer;
+}
+
+#addForm{
+    display: none;
+}
+#editForm{
+    display: none;
+}
+#deleteForm{
+    display: none;
+}
+#dAddForm{
+    display: none;
+}
+
+#dEditForm{
+    display: none;
+}
+
+#dDeleteForm{
+    display: none;
+}
+
+#sAddForm{
+    display: none;
+}
+
+#sEditForm{
+    display: none;
+}
+
+#sDeleteForm{
+    display: none;
+}
+
+.dForms{
+    width: 68%;
+    height: 60%;
+    margin-top: 5vh;
+    border: solid white 5px;
+}
+.sForms{
+    width: 28%;
+    height: 60%;
+    margin-top: 5vh;
+    border: solid white 5px;
+}
+.dForms input{
+    width: 20%;
+}
+.dForms select{
+    width: 20%;
+}
+.sForms input{
+    width: 40%;
+}
+.sForms select{
+    width: 40%;
+}
+
+.submitButtons:hover{
+    cursor: pointer;
+}
+
+.cancelButtons:hover{
+    cursor: pointer;
+}
+
+#dropSelect{
+    position: absolute;
+    top: 15vh;
+    left: 40vw;
+    margin: 1vh 0 0 0;
+    height: 5vh;
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5000;
+}
+
+#dropSelect select{
+    width: 100%;
+    height: 60%;
+    border: none;
+    margin: none;
+}
+
+#selectedSchools{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5vh 0 0.5vh 0;
+}
+
+#selectedSchools li{
+    position: relative;
+    width: fit-content;
+    height: 3vh;
+    margin: 0.2vh 1vw 0.2vh 1vw;
+    background-color: rgba(52, 52, 133, 0.473);
+    border-radius: 0.3vh;
+    padding: 0 3.5vw 0 0.5vw;
+}
+
+#editedSchools{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5vh 0 0.5vh 0;
+}
+
+#editedSchools li{
+    position: relative;
+    width: fit-content;
+    height: 3vh;
+    margin: 0.2vh 1vw 0.2vh 1vw;
+    background-color: rgba(52, 52, 133, 0.473);
+    border-radius: 0.3vh;
+    padding: 0 3.5vw 0 0.5vw;
+}
+
+.schoolDelete{
+    position: absolute;
+    height: 3vh;
+    width: 3vh;
+    background-color: rgba(119, 136, 153, 0.582);
+    top: 0;
+    right: 0;
+    transition: 0.3s;
+}
+
+.schoolDelete:hover{
+    cursor: pointer;
+    color: black;
+}
+
+table{
+    width: 100vw;
+    background-color: rgba(119, 136, 153, 0.582);
+    color: white;
+    z-index: 1000;
+    overflow-y: scroll;
+    border: solid white 10px;
+    margin-top: 3vh;
+}
+
+#districtTable{
+    display: inline-table;
+    width: 69%;
+    z-index: 1000;
+    margin: 5vh 0 0 1vw;
+}
+
+#schoolTable{
+    display: inline-table;
+    width: 29vw;
+    z-index: 1000;
+    margin: 5vh 0 0 -0.2vw;
+}
+
+#schoolPageTable{
+    display: inline-table;
+    width: 49.5%;
+    margin: 0 0 0 -0.5vw;
+}
+
+tr{
+    width: 100%;
+    height: 5vh;
+    margin: 1vw;
+}
+
+th{
+    text-align: left;
+    font-weight: 100;
+    border-bottom: solid white 2px;
+    border-left: solid white 2px;
+    text-indent: 1vw;
+    background-color: steelblue;
+}
+
+td{
+    height: 5vh;
+    text-align: left;
+    font-weight: 100;
+    border-left: solid white 2px;
+    text-indent: 1vw;
+}
+
+h3{
+    position: absolute;
+    height: 5vh;
+    color: black;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+}
+
+#inputLabel{
+    top: 10vh;
+    width: 100vw;
+}
+
+#filterForm{
+    position: absolute;
+    top: 40vh;
+    left: 0;
+    height: 5vh;
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding-left: calc(1vw + 10px);
+}
+
+#filterButton{
+    cursor: pointer;
+    width: 5vw;
+}
+
+#tableLabel{
+    top: 40vh;
+    width: 100vw;
+}
+
+#tableLabelA{
+    top: 40vh;
+    width: 40vw;
+    left: 30vw;
+}
+
+#tableLabelB{
+    top: 40vh;
+    width: 30vw;
+    left: 70vw;
+}
+
+#tableLabelC{
+    top: 40vh;
+    width: 100vw;
+    left: 0;
+}
+
+#tableLabelD{
+    top: 40vh;
+    width: 50vw;
+    left: 50vw;
+}
+
+h1{
+    position: absolute;
+    top: 0;
+    height: 8vh;
+    width: 100vw;
+    background-color: steelblue;
+    color: white;
+    border: solid white 1vh;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 100;
+}
+
+img{
+    margin: 0 2vw 0 2vw;
+}
